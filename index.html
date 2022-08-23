@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>users_json</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script>
+    const root = document.querySelector("#root");
+    async function getusers() {
+      const res = await fetch("users.json");
+      const users = await res.json();
+      users.forEach((user, index) => {
+        root.innerHTML += ` <div class= "card">
+        <div class="card__id">${user.id}</div>
+        <div class="card__name">${user.name}</div>
+        <div class="card__title">${user.username}</div>
+        <div class="card__email">${user.email}</div>
+        <div class="card__address--street">${user.address.street}</div>
+        <div class="card__address--suite">${user.address.suite}</div>
+        <div class="card__address--city">${user.address.city}</div>
+        <div class="card__address--zipcode">${user.address.zipcodes}</div>
+        <div class="card__geo--lat">${user.address.geo.lat}</div>
+        <div class="card__geo--lng">${user.address.geo.lng}</div>
+        <div class="card__phone">${user.phone}</div>
+        <div class="card__website">${user.websitev}</div>
+        <div class="card__company--name">${user.company.name}</div>
+        <div class="card__company--catchPhrasee text">${user.company.catchPhrase}</div>
+        <div class="card__company--bs text">${user.company.bs}</div>
+      
+        </div>`;
+      });
+    }
+    getusers();
+  </script>
+</html>

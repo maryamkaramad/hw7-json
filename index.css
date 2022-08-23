@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border: 2px solid rgb(141, 107, 107);
+
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    align-content: flex-end;
+    justify-items: bet;
+
+}
+
+.text {
+    text-align: center;
+}
+
+.card__id {
+    font-size: xx-large;
+    color: rgb(107, 117, 117);
+}
+
+.card:nth-child(2n) {
+    background: rgb(170, 163, 163);
+}
